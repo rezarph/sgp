@@ -303,13 +303,13 @@ function create_config( )
    "type"
 
     },
-    sudo_users = {203079836,211303414,162585557},--Sudo users
+    sudo_users = {121952579},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[ ]],
     help_text_realm = [[ ]],
     help_text = [[ ]],
 	help_text_super =[[
-Attackerteam SuperGroup Commands:
+Alominabot SuperGroup Commands:
 
 🔷!owner
 دریافت آیدی مدیر اصلی گروه
@@ -447,7 +447,7 @@ Attackerteam SuperGroup Commands:
 🔷!banner
 ساخت بنر
 
-@Attacker_team
+@Alominateam
 ]],
   }
   serialize_to_file(config, './data/config.lua')
