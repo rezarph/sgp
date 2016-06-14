@@ -309,7 +309,7 @@ function create_config( )
     help_text_realm = [[ ]],
     help_text = [[ ]],
 	help_text_super =[[
-DiMoN-BoT SuperGroup Commands:
+Attackerteam SuperGroup Commands:
 
 🔷!owner
 دریافت آیدی مدیر اصلی گروه
@@ -447,7 +447,7 @@ DiMoN-BoT SuperGroup Commands:
 🔷!banner
 ساخت بنر
 
-@team_dimon
+@Attacker_team
 ]],
   }
   serialize_to_file(config, './data/config.lua')
