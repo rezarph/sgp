@@ -1,11 +1,12 @@
 AlominTeam
 
 Botid:@Alomina
-
+——————————————————
 
 SUDO:@Alominasudo
-
+——————————————————
 
 Channel:@Alominateam
+——————————————————
+Bot v1
 
-Bot V1
