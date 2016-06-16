@@ -208,7 +208,7 @@ if to == 'user' or service or is_admin1(msg) and to == "chat" or to == "channel"
 
 	if matches[1] == 'help' and msg.to.type == 'user' or matches[1] == 'pmhelp' and is_admin1(msg) and msg.to.type ~= 'user' then
       	savelog(msg.to.id, name_log.." ["..msg.from.id.."] used pm help")
-	text = "فقط در سوپر گروه فعال است برای خرید به @parsaalemi مراجعه کنید"
+	text = "کاربرگرامی لطفا این دستوررادرسوپر گروه وارد کنید وفقط مخصوص سوپرگروه است."
      	return text
     end
 
@@ -221,34 +221,4 @@ if to == 'user' or service or is_admin1(msg) and to == "chat" or to == "channel"
      	return super_help()
     end
 
-    if matches[1] == 'chats' and is_admin1(msg)then
-		return chat_list(msg)
-	elseif matches[1] == 'chats' and to == 'user' then
-		savelog(msg.to.id, name_log.." ["..msg.from.id.."] Used /chats")
-		return chat_list(msg)
-    end
-
-	if matches[1] == 'chatlist' then
-	savelog(msg.to.id, name_log.." ["..msg.from.id.."] Used /chatlist")
-		if is_admin1(msg) and msg.to.type == 'chat' or msg.to.type == 'channel' then
-			chat_list(msg)
-			send_document("chat#id"..msg.to.id, "./groups/lists/listed_groups.txt", ok_cb, false)
-			send_document("channel#id"..msg.to.id, "./groups/lists/listed_groups.txt", ok_cb, false)
-		elseif msg.to.type == 'user' then
-			chat_list(msg)
-			send_document("user#id"..msg.from.id, "./groups/lists/listed_groups.txt", ok_cb, false)
-		end
-	end
-end
-
-return {
-    patterns = {
-    "^[#!/](help)$",
-    "^[#!/](pmhelp)$",
-    "^[#!/](superhelp)$",
-    "^[#!/](kickme) (.*)$",
-    "^!!tgservice (chat_add_user)$",
-    },
-    run = run,
-	pre_process = pre_process
-}
+    
