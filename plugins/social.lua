@@ -2,7 +2,7 @@ do
     function run(msg, matches)
         
   local text = [[
-👤 Social Commands :
+👤لیست دستورات تفریحی :
 
 !git (یوزرنیم)
 دریافت اطلاعات یک یوزرنیم در گیت هاب
@@ -77,7 +77,13 @@ do
 !join (آیدی گروه)
 عضو شدن در گروه
 
-!social
+!time
+دریافت زمان وتاریخ
+
+!nerkh
+دریافت لیست قیمت سوپرگروه
+
+!help fun
 دریافت لیست دستورات تفریحی
 
 !help
@@ -93,8 +99,8 @@ return {
     "show the bot help",
   },
   patterns = {
-    "^[!#/]([Ss]ocial)$",
-    "^[!#/]([Ss]ocialhelp)$",
+    "^[!#/]([Hh]elp fun)$",
+    "^[!#/]([Hh]elpfun)$",
   }, 
   run = run,
 }
