@@ -300,7 +300,8 @@ function create_config( )
    "lock_share",
    "lock_photo",
    "lock_video",
-   "type"
+   "type",
+   "short"
 
     },
     sudo_users = {121952579},--Sudo users
