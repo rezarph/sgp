@@ -1,3 +1,4 @@
+
 local function run(msg, matches)
 	if matches[1]:lower() == 'aparat' then
 		local url = http.request('http://www.aparat.com/etc/api/videoBySearch/text/'..URL.escape(matches[2]))
@@ -8,14 +9,14 @@ local function run(msg, matches)
 		for i = 1, #items do
 		text = text..'\n'..i..'- '..items[i].title..'  -  تعداد بازدید: '..items[i].visit_cnt..'\n    لینک: aparat.com/v/'..items[i].uid
 		end
-		text = text..''
+		text = text..'\n\n✅Alominateam✅'
 		return text
 	end
 end
 
 return {
    patterns = {
-"^[/#!](aparat) (.*)$",
+	"^[/!](aparat) (.*)$",
    },
    run = run
 }
