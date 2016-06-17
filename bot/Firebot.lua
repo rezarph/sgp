@@ -391,11 +391,10 @@ Alominabot SuperGroup Commands:
 روشن کردن ربات در گروه
 🔷!join support
 عضو شدن در گروه پشتیبانی ربات
-🔷!social
+🔷!help fun
 دریافت راهنمای تفریحی
-🔷زمان
-دریافت زمان وتاریخ
-@Alominateam
+
+✅Alominateam✅
 ]],
   }
   serialize_to_file(config, './data/config.lua')
