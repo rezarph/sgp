@@ -1,3 +1,22 @@
+--[[
+################################
+#                              #
+#            Aparat            #
+#                              #
+#                              #
+#    by @Dragon_Born "Arian"   #
+#                              #
+#                              #
+#    Modified by GPMod Team    #
+#	                       #
+#                              #
+#     Update: 7 June 2016      #
+#                              #
+#                              #
+#           @GPMod             #
+#                              #
+################################
+]]
 
 local function run(msg, matches)
 	if matches[1]:lower() == 'aparat' then
@@ -9,7 +28,7 @@ local function run(msg, matches)
 		for i = 1, #items do
 		text = text..'\n'..i..'- '..items[i].title..'  -  تعداد بازدید: '..items[i].visit_cnt..'\n    لینک: aparat.com/v/'..items[i].uid
 		end
-		text = text..'\n\n✅Alominateam✅'
+		text = text..'\n\n@GPMod'
 		return text
 	end
 end
