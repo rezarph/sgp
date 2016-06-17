@@ -8,23 +8,23 @@ local function run(msg, matches)
 	local res = http.request("http://api.openweathermap.org/data/2.5/weather?q="..URL.escape(matches[2]).."&appid=269ed82391822cc692c9afd59f4aabba")
 	local jtab = JSON.decode(res)
 	if jtab.name then
-		if jtab.list[i].weather[1].main == "Thunderstorm" then
-			status = "⛈طوفاني"
-		elseif jtab.list[i].weather[1].main == "Drizzle" then
-			status = "🌦نمنم باران"
-		elseif jtab.list[i].weather[1].main == "Rain" then
-			status = "🌧باراني"
-		elseif jtab.list[i].weather[1].main == "Snow" then
-			status = "🌨برفي"
-		elseif jtab.list[i].weather[1].main == "Atmosphere" then
-			status = "🌫مه - غباز آلود"
-		elseif jtab.list[i].weather[1].main == "Clear" then
-			status = "🌤️صاف"
-		elseif jtab.list[i].weather[1].main == "Clouds" then
-			status = "☁️ابري"
-		elseif jtab.list[i].weather[1].main == "Extreme" then
-				status = "-------"
-		elseif jtab.list[i].weather[1].main == "Additional" then
+		if jtab.weather[1].main == "Thunderstorm" then
+			status = "طوفاني"
+		elseif jtab.weather[1].main == "Drizzle" then
+			status = "نمنم باران"
+		elseif jtab.weather[1].main == "Rain" then
+			status = "باراني"
+		elseif jtab.weather[1].main == "Snow" then
+			status = "برفي"
+		elseif jtab.weather[1].main == "Atmosphere" then
+			status = "مه - غباز آلود"
+		elseif jtab.weather[1].main == "Clear" then
+			status = "صاف"
+		elseif jtab.weather[1].main == "Clouds" then
+			status = "ابري"
+		elseif jtab.weather[1].main == "Extreme" then
+			status = "-------"
+		elseif jtab.weather[1].main == "Additional" then
 			status = "-------"
 		else
 			status = "-------"
@@ -64,19 +64,19 @@ local function run(msg, matches)
 			local F1,C1 = temps(jtab.list[i].main.temp_min)
 			local F2,C2 = temps(jtab.list[i].main.temp_max)
 			if jtab.list[i].weather[1].main == "Thunderstorm" then
-				status = "⛈طوفاني"
+				status = "طوفاني"
 			elseif jtab.list[i].weather[1].main == "Drizzle" then
-				status = "🌦نمنم باران"
+				status = "نمنم باران"
 			elseif jtab.list[i].weather[1].main == "Rain" then
-				status = "🌧باراني"
+				status = "باراني"
 			elseif jtab.list[i].weather[1].main == "Snow" then
-				status = "🌨برفي"
+				status = "برفي"
 			elseif jtab.list[i].weather[1].main == "Atmosphere" then
-				status = "🌫مه - غباز آلود"
+				status = "مه - غباز آلود"
 			elseif jtab.list[i].weather[1].main == "Clear" then
-				status = "🌤️صاف"
+				status = "صاف"
 			elseif jtab.list[i].weather[1].main == "Clouds" then
-				status = "☁️ابري"
+				status = "ابري"
 			elseif jtab.list[i].weather[1].main == "Extreme" then
 				status = "-------"
 			elseif jtab.list[i].weather[1].main == "Additional" then
@@ -96,11 +96,11 @@ local function run(msg, matches)
 			elseif i == 2 then
 				day = "پس فردا هوا "
 			elseif i == 3 then
-				day = "3⃣روز بعد هوا "
+				day = "3روز بعد هوا "
 			elseif i == 4 then
-				day = "4⃣روز بعد هوا "
+				day = "4روز بعد هوا "
 			elseif i == 5 then
-				day = "5⃣روز بعد هوا "
+				day = "5روز بعد هوا "
 			end
 			after = after.."- "..day..status.." ميباشد. "..icon.."\n🔺C"..C2.."°  -  F"..F2.."°\n🔻C"..C1.."°  -  F"..F1.."°\n"
 		end
@@ -118,3 +118,11 @@ return {
 	patterns = {"^([Ww]eather) (.*)$"},
 	run = run,
 }
+
+-- https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20in%20%28select%20woeid%20from%20geo.places%281%29%20where%20text%3D%22"..URL.escape(matches[1]).."%22%29&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys
+-- celsius = string.format("%.0f", (data.temp - 32) * 5/9)
+
+-- jtab.weather[1].description		clear sky",
+-- "مختصات جغرافيايي: "..jtab.coord.lon..","..jtab.coord.lat..""
+-- jtab.list[i].weather.description		scattered clouds",
+-- jtab.list[i].main.humidity
