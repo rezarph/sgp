@@ -301,7 +301,9 @@ function create_config( )
    "lock_photo",
    "lock_video",
    "type",
-   "short"
+   "short",
+   "Warn",
+   "mean"
 
     },
     sudo_users = {121952579},--Sudo users
